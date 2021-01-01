@@ -1,12 +1,16 @@
 import React,{useState} from 'react'
-
-const Signin = () => {
+import {connect} from 'react-redux'
+import {signin} from '../../Redux/Authentication/authActions';
+const Signin = ({signin}) => {
     var [email, setEmail] = useState('')
     var [password, setPassword] = useState('')
     var handleFormSumit =(e) => {
         e.preventDefault()
-        console.log(email)
-        console.log(password)
+        var credentials  = {
+            email,
+            password
+        }
+        signin(credentials)
     }
 
 
@@ -21,5 +25,8 @@ const Signin = () => {
         </div>
     )
 }
+var actions = {
+    signin
+}
 
-export default Signin
+export default connect(null,actions)(Signin)

@@ -1,5 +1,23 @@
 import { auth, firestore, serverTimestamp } from "./../../Firebase/firebase";
-import { SET_USER } from "./constants";
+import { SET_USER, REMOVE_USER } from "./constants";
+
+var setUser = (userDataForState) => (dispatch) => {
+  //nonn async func can also be called using thunk
+  try {
+    dispatch({
+      type: SET_USER,
+      payload: {
+        user: userDataForState,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+var removerUser = () => ({
+  type: REMOVE_USER,
+});
 
 export var signup = (credentials) => async (dispatch) => {
   var { email, password, fullName } = credentials;
@@ -19,19 +37,42 @@ export var signup = (credentials) => async (dispatch) => {
     };
     await firestore.collection("Users").doc(uid).set(userInfo);
     //Setting up redux state
-    var userDateForState = {
+    var userDataForState = {
       fullName,
       email,
       createdAt: serverTimestamp,
       uid,
     };
-    dispatch({
-      type: SET_USER,
-      payload: {
-        user: userDateForState,
-      },
-    });
+
+    dispatch(setUser(userDataForState)); //if calling an action inside an action, use dispatch to call it
+    //so that values can be sett in redux state
   } catch (error) {
     console.log(error);
   }
+};
+
+export var signin = (credentials) => async (dispatch) => {
+  try {
+    var { email, password } = credentials;
+    var {
+      user: { uid },
+    } = await auth.signInWithEmailAndPassword(email, password);
+    var userData = await firestore.collection("Users").doc(uid).get(); //find data with uid
+    var { fullName, email: userEmail } = userData.data(); //data() use for fetching data //imp if you want to manipulate data coming from db
+    var userDataForState = { 
+      fullName,
+      email,
+      uid,
+    };
+    dispatch(setUser(userDataForState));
+    // console.log(userData)
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export var signout = () => async (dispatch) => {
+  //signout user from firebase
+  await auth.signOut();
+  dispatch(removerUser());
 };

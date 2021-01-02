@@ -1,13 +1,21 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import React,{useEffect} from 'react'
 import './App.css';
 import Home from './Pages/Home/home';
 import Authentication from './Pages/Authetication/auth.js';
 import Category from './Pages/Category/category';
 import Categoryproduct from './Pages/CategoryProducts/categoryproduct';
 import Checkout from './Pages/Checkout/checkout';
+import { connect } from 'react-redux';
+import { firebaseAuthListener } from './Redux/Authentication/authActions';
 
 
-function App() {
+function App({firebaseAuthListener}) {
+ useEffect(() =>
+  {
+    firebaseAuthListener()
+    console.log('CMD')
+  },[])
   return (
     <div className="App">
       <h1>Buyfy</h1>
@@ -22,5 +30,7 @@ function App() {
     </div>
   );
 }
-
-export default App;
+var actions = {
+  firebaseAuthListener
+}
+export default connect(null, actions)(App);

@@ -5,6 +5,7 @@ import {
   googleAuthProvider,
 } from "./../../Firebase/firebase";
 import { SET_USER, REMOVE_USER } from "./constants";
+import firebase from "./../../Firebase/firebase";
 
 var setUser = (userDataForState) => (dispatch) => {
   //nonn async func can also be called using thunk
@@ -93,7 +94,7 @@ export var googleSignin = () => async (dispatch) => {
     //IF NEW USER ADD USER TO FIRE STORE AND SET IT TO REDUX STATE
     if (isNewUser) {
       var userInfo = {
-        fullName : displayName,
+        fullName: displayName,
         email,
         createdAt: serverTimestamp,
         uid,
@@ -111,6 +112,38 @@ export var googleSignin = () => async (dispatch) => {
     dispatch(setUser(userDataForState));
 
     console.log(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+//CENTRALISED AUTH STATE HANDLER 
+export var firebaseAuthListener = () => async (dispatch) => {
+  //when refreshing the page user should still in sign in
+  try {
+    firebase.auth().onAuthStateChanged(async function (user) { //ITS A LISTENER
+      if (user) {
+        // User is signed in.
+        var { uid } = user;
+        //FETCH USER DATA FROM FIRESTORE
+        var query = await firestore.collection("Users").doc(uid).get(); //find data with uid
+        var { fullName, email } = query.data();
+        console.log(uid);
+        // SET TO REDUX STATE
+        var userDataForState = {
+          fullName,
+          email,
+          createdAt: serverTimestamp,
+          uid,
+        };
+        dispatch(setUser(userDataForState));
+      } else {
+        // No user is signed in.
+        console.log("No user sign in");
+        dispatch(removerUser());
+      }
+    });
   } catch (error) {
     console.log(error);
   }

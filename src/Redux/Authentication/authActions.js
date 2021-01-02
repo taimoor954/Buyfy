@@ -1,4 +1,9 @@
-import { auth, firestore, serverTimestamp } from "./../../Firebase/firebase";
+import {
+  auth,
+  firestore,
+  serverTimestamp,
+  googleAuthProvider,
+} from "./../../Firebase/firebase";
 import { SET_USER, REMOVE_USER } from "./constants";
 
 var setUser = (userDataForState) => (dispatch) => {
@@ -59,7 +64,7 @@ export var signin = (credentials) => async (dispatch) => {
     } = await auth.signInWithEmailAndPassword(email, password);
     var userData = await firestore.collection("Users").doc(uid).get(); //find data with uid
     var { fullName, email: userEmail } = userData.data(); //data() use for fetching data //imp if you want to manipulate data coming from db
-    var userDataForState = { 
+    var userDataForState = {
       fullName,
       email,
       uid,
@@ -75,4 +80,38 @@ export var signout = () => async (dispatch) => {
   //signout user from firebase
   await auth.signOut();
   dispatch(removerUser());
+};
+
+export var googleSignin = () => async (dispatch) => {
+  try {
+    //SIGNIN USER WITH FIREBASE AUTH GOOGLE
+    var user = await auth.signInWithPopup(googleAuthProvider);
+    var {
+      user: { displayName, email, uid },
+      additionalUserInfo: { isNewUser },
+    } = user;
+    //IF NEW USER ADD USER TO FIRE STORE AND SET IT TO REDUX STATE
+    if (isNewUser) {
+      var userInfo = {
+        fullName : displayName,
+        email,
+        createdAt: serverTimestamp,
+        uid,
+      };
+      await firestore.collection("Users").doc(uid).set(userInfo);
+    }
+    //ELSE DIRECTLT SET TO REDUX STATE
+    var userDataForState = {
+      fullName: displayName,
+      email,
+      createdAt: serverTimestamp,
+      uid,
+    };
+
+    dispatch(setUser(userDataForState));
+
+    console.log(user);
+  } catch (error) {
+    console.log(error);
+  }
 };

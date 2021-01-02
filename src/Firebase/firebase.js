@@ -14,6 +14,8 @@ firebase.initializeApp(firebaseConfig);
 
 export var auth = firebase.auth();
 export var firestore = firebase.firestore();
+export var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
 //Time of user created respective to server time
 export var serverTimestamp = firebase.firestore.FieldValue.serverTimestamp() //return flag //kinda nishani
 

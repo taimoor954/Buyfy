@@ -2,6 +2,7 @@ import React from 'react'
 import Signupform from './../../Components/SignupForm/signupform';
 import Signin from '../../Components/SigninForm/signin';
 import SignOutBtn from './../../Components/SignOutBtn/SignOutBtn';
+import GooglesigninBtn from './../../Components/GoogleSigninBtn/GooglesigninBtn';
 
 const Authentication = () => {
     return (
@@ -10,6 +11,7 @@ const Authentication = () => {
             <Signupform/>
             <Signin/>
             <SignOutBtn/>
+            <GooglesigninBtn/>
         </div>
     )
 }

@@ -8,6 +8,7 @@ import Categoryproduct from './Pages/CategoryProducts/categoryproduct';
 import Checkout from './Pages/Checkout/checkout';
 import { connect } from 'react-redux';
 import { firebaseAuthListener } from './Redux/Authentication/authActions';
+import Test from './Pages/Test/test';
 
 
 function App({firebaseAuthListener}) {
@@ -25,6 +26,7 @@ function App({firebaseAuthListener}) {
       <Route path="/category" component={Category} exact={true}/>
       <Route path="/category-products" component={Categoryproduct} exact={true}/>
       <Route path="/checkout" component={Checkout} exact={true}/>
+      <Route path="/test" component={Test} exact={true}/>
       </Switch>
       
     </div>

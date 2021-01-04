@@ -21,7 +21,6 @@ const Test = ({uploadProducts}) => {
       coverPhoto,
       createdAt : ""
     };
-    console.log(productObject)
     uploadProducts(productObject)
 
   };

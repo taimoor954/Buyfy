@@ -1,6 +1,7 @@
 import firebase  from "firebase/app";
 import "firebase/auth"; //for sign in email and sign in with google
 import "firebase/firestore"; //for DB
+import "firebase/storage"; //for storage
 var firebaseConfig = {
   apiKey: "AIzaSyAo1fbFio_f-TlLMEXSV-t6LWDh1fc8-Wk",
   authDomain: "buyfy-77696.firebaseapp.com",
@@ -15,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 export var auth = firebase.auth();
 export var firestore = firebase.firestore();
 export var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export var storage = firebase.storage().ref();
 
 //Time of user created respective to server time
 export var serverTimestamp = firebase.firestore.FieldValue.serverTimestamp() //return flag //kinda nishani

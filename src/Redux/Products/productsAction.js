@@ -1,6 +1,22 @@
-import { v4 as uuid} from 'uuid';
-import { firestore, storage } from "../../Firebase/firebase";
-import { serverTimestamp } from './../../Firebase/firebase';
+/* eslint-disable no-loop-func */
+import {
+  SET_PRODUCTS
+} from './productConstants';
+import {
+  v4 as uuid
+} from 'uuid';
+import {
+  firestore,
+  storage
+} from "../../Firebase/firebase";
+import {
+  serverTimestamp
+} from './../../Firebase/firebase';
+import { categorizeProducts } from '../../Utility/productUtility/productUtility';
+
+
+
+
 
 export const uploadProducts = (productObject) => async () => {
   try {
@@ -13,21 +29,21 @@ export const uploadProducts = (productObject) => async () => {
     fileListener.on("state_changed", (snapshot) => {
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + progress + '% done');
-    }, (error)=> {
+      }, (error) => {
         console.log(error)
-    },
-    async ()=> {
+      },
+      async () => {
         //will triger after file completetion
         //From here we will get donwload url
         var downloadURL = await imageRef.getDownloadURL()
         console.log(downloadURL)
-        productObject.coverPhoto  = downloadURL
-        productObject.createdAt  = serverTimestamp
-        productObject.cost  = parseFloat(productObject.cost)
-        productObject.quantity  = parseInt(productObject.quantity)
+        productObject.coverPhoto = downloadURL
+        productObject.createdAt = serverTimestamp
+        productObject.cost = parseFloat(productObject.cost)
+        productObject.quantity = parseInt(productObject.quantity)
         console.log(productObject)
         await firestore.collection('Products').add(productObject)
-    }
+      }
 
     );
 
@@ -38,3 +54,24 @@ export const uploadProducts = (productObject) => async () => {
     console.log(error);
   }
 };
+
+
+export const fetchProducts = () => async (dispatch) => {
+  try {
+    var products = []
+    const query = await firestore.collection('Products').get()
+    query.docs.forEach((doc) => {
+      products.push(doc.data())
+    })
+   var categories = categorizeProducts(products) //ARRAY OF PRODUCTS
+  //  console.log(categories)
+    dispatch({
+      type: SET_PRODUCTS,
+      payload: {
+        products
+      }
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}

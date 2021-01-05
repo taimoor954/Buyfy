@@ -9,6 +9,7 @@ import Checkout from './Pages/Checkout/checkout';
 import { connect } from 'react-redux';
 import { firebaseAuthListener } from './Redux/Authentication/authActions';
 import Test from './Pages/Test/test';
+import Navbar from './Components/Navbar/navbar';
 
 
 function App({firebaseAuthListener}) {
@@ -18,7 +19,8 @@ function App({firebaseAuthListener}) {
     console.log('CMD')
   },[])
   return (
-    <div className="App">
+    <div>
+      <Navbar/>
       <h1>Buyfy</h1>
       <Switch>
       <Route path="/" component={Home} exact={true}/>

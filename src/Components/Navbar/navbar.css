@@ -1,0 +1,22 @@
+.navbar{
+width: 100vw;
+height:  15vh;
+background-color: brown;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+.NavItemContainer{
+    display: flex;
+    align-items: center;
+}
+.NavItem{
+    padding: 0 30px;
+    cursor: pointer;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+*{
+margin: 0px;
+padding: 0px;
+border: 5px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}

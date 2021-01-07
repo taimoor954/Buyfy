@@ -2,22 +2,16 @@ import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../Redux/Products/productsAction';
 import { categorizeProducts } from '../../Utility/productUtility/productUtility';
+import CategoryList from './../../Components/CategoryList/categoryList';
 
-const Category = ({fetchProducts, categories}) => {
-    console.log(categories)
-    useEffect(()=>{
-        //CDM
-        fetchProducts()
-    },[])
+const Category = () => {
+    
     return (
         <div>
             <h1>Category page</h1>
+            <CategoryList/>
         </div>
     )
 }
-var mapState= (store) => ({categories : categorizeProducts(store.products)})
 
-var actions = {
-    fetchProducts
-}
-export default connect(mapState, actions)(Category)
+export default Category

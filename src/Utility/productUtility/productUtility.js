@@ -1,6 +1,5 @@
 /* eslint-disable no-loop-func */
 export var categorizeProducts = (productsArray) => {
-    // console.log(productsArray)
     var categoriesAvaliable = []
     for (var product of productsArray) {
       var category =product.category

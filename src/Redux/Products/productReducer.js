@@ -4,8 +4,9 @@ var productReducer= (state=initalState, actions) => {
 var {type,payload} =actions
 switch (type) {
     case SET_PRODUCTS:
-            return [...state, ...payload.products]
-        break;
+            return [...payload.products] //ager [...state, payload.product] karengay tou prev + new ainegay
+            //her page reload per new + previous display hongay
+    
 
     default:
         return state;

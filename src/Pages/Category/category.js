@@ -1,11 +1,16 @@
 import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
-import { fetchProducts } from '../../Redux/Products/productsAction';
+import { fetchProducts, clearProducts } from '../../Redux/Products/productsAction';
 import { categorizeProducts } from '../../Utility/productUtility/productUtility';
 import CategoryList from './../../Components/CategoryList/categoryList';
 
-const Category = () => {
-    
+const Category = ({clearProducts}) => {
+    useEffect(() => {
+        return () => {
+        //CWU
+        clearProducts()
+        }
+    }, [])
     return (
         <div>
             <h1>Category page</h1>
@@ -14,4 +19,7 @@ const Category = () => {
     )
 }
 
-export default Category
+var actions = {
+    clearProducts
+}
+export default connect(null,actions)(Category)

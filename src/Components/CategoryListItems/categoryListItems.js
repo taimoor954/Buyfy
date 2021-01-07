@@ -3,7 +3,6 @@ import ProductCard from "./../ProductCard/productCard";
 import { Link } from "react-router-dom";
 
 const CategoryListItems = ({ categoryCheck, products }) => {
-  console.log(products);
   return (
     <div>
       <h1>---------------------------------------------------</h1>

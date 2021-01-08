@@ -21,7 +21,9 @@ const Categoryproduct = ({match: {params: { categoryCheck },}, fetchCategoryProd
 };
 // var mapState = (store, {match: {params: { categoryCheck }}} ) => ({
 //   products: store.products.filter((product)=> product.category === categoryCheck)
-// });
+// }); //because ager page reload hua tou product show nahi hongay cuz product state may category list say arahi hai and 
+//yaha wo use nahi hora tou direct db say fetch karna hoga fetchCategoryProducts is liye use hua hai
+//takay category kay basisi per product fetch ho
 
 var actions = {
   fetchCategoryProducts, 

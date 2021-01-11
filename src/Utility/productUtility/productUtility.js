@@ -27,7 +27,7 @@ export var categorizeProducts = (productsArray) => {
 
 export var productQuantityIncrement = (allProducts, productToAdd) => {
   var productExist = allProducts.some(
-    (product) => product.id == productToAdd.id
+    (product) => product.id === productToAdd.id
   );
   if (!productExist) {
     return [...allProducts, { ...productToAdd, quantity: 1 }];
@@ -36,7 +36,7 @@ export var productQuantityIncrement = (allProducts, productToAdd) => {
       if (product.id === productToAdd.id) {
         return {
           ...product,
-          quantity: ++product.quantity,
+          quantity: product.quantity + 1,
         };
       } else {
         return product;
@@ -44,3 +44,34 @@ export var productQuantityIncrement = (allProducts, productToAdd) => {
     });
   }
 };
+
+export var productRemovalFromCart = (allProducts, productId) => {
+  console.log(allProducts)
+  var product = allProducts.find((product) => product.id === productId); //TO FIND product that matches cond
+  if(product) //if product exist in cart
+  {
+    if (product.quantity > 0) {
+      return allProducts.map((product) => {
+        if (product.id === productId)
+          return {
+            ...product,
+            quantity: product.quantity - 1,
+          };
+        else {
+          return product;
+        }
+      });
+    } else {
+      return allProducts.filter((product) => product.id !== productId); //WO SARAY RETRUN HO JINKAY REMOVE BUTTON PER CLICK NAHI HUA AND JIS PER HUA HAI USKI QUANTITIY 0 HOJAYEGI OR CART SAY REMOVE HOJAYEGA
+    }
+  }
+  else {
+    return allProducts //if no product exist return all products as an emptry array
+  }
+  
+};
+
+export var deleteProductFromCart = (allProducts, productId)=> {
+  return allProducts.filter((product) => product.id !== productId); //WO SARAY RETRUN HO JINKAY REMOVE BUTTON PER CLICK NAHI HUA AND JIS PER HUA HAI WO DELETE KARDAY
+
+}

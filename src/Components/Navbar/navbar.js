@@ -10,10 +10,13 @@ const Navbar = () => {
 
             <div className="NavItemContainer">
                 <Link to='/category'>
-                    <div className="NavItem"><h4>Categories</h4></div>
+                <div className="NavItem"><h4>Categories</h4></div>
                 </Link>
                 <Link to="/authentication">
-                    <div><h4>Authetication Page</h4></div>
+                    <div className="NavItem"><h4>Authetication Page</h4></div>
+                </Link>
+                <Link to="/test">
+                    <div className="NavItem"><h4>Test</h4></div>
                 </Link>
             </div>
         </div>

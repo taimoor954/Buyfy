@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { uploadProducts } from './../../Redux/Products/productsAction';
+import Cart from './../../Components/Cart/Cart';
 
 const Test = ({uploadProducts}) => {
   var [category, setCategory] = useState("");
@@ -27,7 +28,7 @@ const Test = ({uploadProducts}) => {
   return (
     <div>
       <h1>Test</h1>
-      <form onSubmit={handleSubmitForm}>
+      {/* <form onSubmit={handleSubmitForm}>
         <input
           onChange={(e) => {
             setCategory(e.target.value);
@@ -83,7 +84,8 @@ const Test = ({uploadProducts}) => {
           value={description}
         ></textarea>
         <button type='submit'>Submit</button>
-      </form>
+      </form> */}
+      <Cart/>
     </div>
   );
 };
@@ -93,3 +95,4 @@ var actions = {
 }
 
 export default connect(null, actions)(Test);
+  

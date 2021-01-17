@@ -93,3 +93,13 @@ try {
 }
 }
 
+export const fecthSpecificProduct = (productId) => async (dispatch) => {
+try {
+  console.log(productId)
+  var query = await firestore.collection('Products').doc(productId).get()
+  var product  = query.data()
+  return product
+} catch (error) {
+  console.log(error)
+}
+}

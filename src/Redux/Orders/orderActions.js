@@ -11,10 +11,10 @@ try {
         orderAt : serverTimestamp,
         orderStatus : 'pending'
     }
-    // var order = await firestore.collection('Orders').add(orderInfo)
-    // console.log(order.id)
+    var order = await firestore.collection('Orders').add(orderInfo)
+    console.log(order.id)
     console.log(history)
-    history.push('/checkout/123')
+    history.push(`/checkout/${order.id}`) //redirecting from action 
 } catch (error) {
     console.log(error)
 }

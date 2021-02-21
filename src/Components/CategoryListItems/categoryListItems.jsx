@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "./../ProductCard/productCard";
+import ProductCard from "../ProductCard/productCard";
 import { Link } from "react-router-dom";
 
 const CategoryListItems = ({ categoryCheck, products }) => {

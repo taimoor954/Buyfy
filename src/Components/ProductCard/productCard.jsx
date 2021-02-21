@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { addProductToCart, removalProductFromCartAction,  deleteProductFromCartAction } from './../../Redux/Cart/cartActions';
+import { addProductToCart, removalProductFromCartAction,  deleteProductFromCartAction } from '../../Redux/Cart/cartActions';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({deleteProductFromCartAction,removalProductFromCartAction,addProductToCart,...product}) => {

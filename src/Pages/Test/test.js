@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { uploadProducts } from './../../Redux/Products/productsAction';
 import Cart from './../../Components/Cart/Cart';
+import Header from './../../Components/Header/header';
+import Paragraph from './../../Components/Paragraphs/paragraphs';
 
 const Test = ({uploadProducts}) => {
   var [category, setCategory] = useState("");
@@ -23,7 +25,7 @@ const Test = ({uploadProducts}) => {
       createdAt : ""
     };
     uploadProducts(productObject)
-
+    
   };
   return (
     <div>
@@ -85,8 +87,14 @@ const Test = ({uploadProducts}) => {
         ></textarea>
         <button type='submit'>Submit</button>
       </form> */}
-      <Cart/>
+      <Cart/> 
+      <Header>This is my header</Header> 
+      {/* Resuing Component above and below  */}
+      <Header fontSize={30} fontWeight='light' color='red'>This is my header</Header>
+      <Paragraph fontSize={18} fontWeight='light' color='blue'>Hey your Paragraph</Paragraph>
+
     </div>
+
   );
 };
 

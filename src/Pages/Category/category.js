@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
 import { fetchProducts, clearProducts } from '../../Redux/Products/productsAction';
 import { categorizeProducts } from '../../Utility/productUtility/productUtility';
-import CategoryList from './../../Components/CategoryList/categoryList';
+import CategoryList from './../../Components/CategoryList/categoryList.jsx';
 
 const Category = ({clearProducts}) => {
     useEffect(() => {

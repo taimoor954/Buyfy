@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import CategoryListItems from './../CategoryListItems/categoryListItems';
+import CategoryListItems from '../CategoryListItems/categoryListItems';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../Redux/Products/productsAction';
 import { categorizeProducts } from '../../Utility/productUtility/productUtility';

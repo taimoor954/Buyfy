@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchCategoryProducts, clearProducts } from "./../../Redux/Products/productsAction";
 import { useEffect } from "react";
-import ProductCard from './../../Components/ProductCard/productCard';
+import ProductCard from './../../Components/ProductCard/productCard.jsx';
 
 const Categoryproduct = ({match: {params: { categoryCheck },}, fetchCategoryProducts, products, clearProducts}) => {
   useEffect(() => {

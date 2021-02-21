@@ -1,6 +1,6 @@
 import { firestore, storage } from "../../Firebase/firebase";
-import { serverTimestamp } from "./../../Firebase/firebase";
-import history from './../../History/history';
+import { serverTimestamp } from "../../Firebase/firebase";
+import history from '../../History/history';
 
 export const generateOrder = () => async (dispatch, getState) => {
 try { 

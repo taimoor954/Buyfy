@@ -3,9 +3,9 @@ import {
   firestore,
   serverTimestamp,
   googleAuthProvider,
-} from "./../../Firebase/firebase";
+} from "../../Firebase/firebase";
 import { SET_USER, REMOVE_USER } from "./constants";
-import firebase from "./../../Firebase/firebase";
+import firebase from "../../Firebase/firebase";
 
 var setUser = (userDataForState) => (dispatch) => {
   //nonn async func can also be called using thunk

@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { addProductToCart, removalProductFromCartAction, deleteProductFromCartAction } from './../../Redux/Cart/cartActions';
+import { addProductToCart, removalProductFromCartAction, deleteProductFromCartAction } from '../../Redux/Cart/cartActions';
 
-const Checkoutlistitems = ({deleteProductFromCartAction,removalProductFromCartAction, addProductToCart,...product}) => {
+const CartListItem = ({deleteProductFromCartAction,removalProductFromCartAction, addProductToCart,...product}) => {
     var {title, cost, quantity, id} = product
     return (
         <div>
@@ -17,4 +17,4 @@ var actions = {
     deleteProductFromCartAction
 }
 
-export default connect(null,actions)(Checkoutlistitems)
+export default connect(null,actions)(CartListItem)

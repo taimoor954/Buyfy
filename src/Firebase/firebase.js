@@ -1,4 +1,4 @@
-import firebase  from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/auth"; //for sign in email and sign in with google
 import "firebase/firestore"; //for DB
 import "firebase/storage"; //for storage
@@ -19,6 +19,6 @@ export var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export var storage = firebase.storage().ref();
 
 //Time of user created respective to server time
-export var serverTimestamp = firebase.firestore.FieldValue.serverTimestamp() //return flag //kinda nishani
+export var serverTimestamp = firebase.firestore.FieldValue.serverTimestamp(); //return flag //kinda nishani
 
 export default firebase;

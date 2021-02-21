@@ -117,17 +117,18 @@ export var googleSignin = () => async (dispatch) => {
   }
 };
 
-
-//CENTRALISED AUTH STATE HANDLER 
+//CENTRALISED AUTH STATE HANDLER
 export var firebaseAuthListener = () => async (dispatch) => {
   //when refreshing the page user should remain still in sign in
   try {
-    firebase.auth().onAuthStateChanged(async function (user) { //ITS A LISTENER
+    firebase.auth().onAuthStateChanged(async function (user) {
+      //ITS A LISTENER
       if (user) {
-        // User is signed in. 
-        var { uid } = user;
+        // User is signed in.
+        var { uid } = user; 
         //FETCH USER DATA FROM FIRESTORE
         var query = await firestore.collection("Users").doc(uid).get(); //find data with uid
+        // console.log(data)
         var { fullName, email } = query.data();
         console.log(uid);
         // SET TO REDUX STATE

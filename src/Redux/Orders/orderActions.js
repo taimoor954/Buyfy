@@ -3,7 +3,7 @@ import { serverTimestamp } from "./../../Firebase/firebase";
 import history from './../../History/history';
 
 export const generateOrder = () => async (dispatch, getState) => {
-try {
+try { 
     var {cart:products, authentication} = getState()
     var orderInfo = {
         ...authentication,

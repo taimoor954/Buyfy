@@ -46,10 +46,10 @@ export var productQuantityIncrement = (allProducts, productToAdd) => {
 };
 
 export var productRemovalFromCart = (allProducts, productId) => {
-  console.log(allProducts)
+  console.log(allProducts);
   var product = allProducts.find((product) => product.id === productId); //TO FIND product that matches cond
-  if(product) //if product exist in cart
-  {
+  if (product) {
+    //if product exist in cart
     if (product.quantity > 0) {
       return allProducts.map((product) => {
         if (product.id === productId)
@@ -64,14 +64,11 @@ export var productRemovalFromCart = (allProducts, productId) => {
     } else {
       return allProducts.filter((product) => product.id !== productId); //WO SARAY RETRUN HO JINKAY REMOVE BUTTON PER CLICK NAHI HUA AND JIS PER HUA HAI USKI QUANTITIY 0 HOJAYEGI OR CART SAY REMOVE HOJAYEGA
     }
+  } else {
+    return allProducts; //if no product exist return all products as an emptry array
   }
-  else {
-    return allProducts //if no product exist return all products as an emptry array
-  }
-  
 };
 
-export var deleteProductFromCart = (allProducts, productId)=> {
+export var deleteProductFromCart = (allProducts, productId) => {
   return allProducts.filter((product) => product.id !== productId); //WO SARAY RETRUN HO JINKAY REMOVE BUTTON PER CLICK NAHI HUA AND JIS PER HUA HAI WO DELETE KARDAY
-
-}
+};

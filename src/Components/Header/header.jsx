@@ -28,13 +28,15 @@ const Header = ({
   color = 'black'
 }) => {
   var fontWeightValue = fontEstimater(fontWeight);
+  var fontSizeValue = fontSize/10
   return (
-    <div>
+    //1em = 10px set through below div style 
+    <div style={{fontSize:"62.5%"}}> 
       <h1
         className="header"
         style={{
-          fontSize: `${fontSize}px`,
-          fontWeight: fontWeight,
+          fontSize: `${fontSizeValue}em`,
+          fontWeight: fontWeightValue,
           ...AdditionalStyle,
             color:color
         }}

@@ -4,6 +4,7 @@ import { uploadProducts } from './../../Redux/Products/productsAction';
 import Cart from './../../Components/Cart/Cart';
 import Header from './../../Components/Header/header';
 import Paragraph from './../../Components/Paragraphs/paragraphs';
+import Button from './../../Components/Buttons/Button';
 
 const Test = ({uploadProducts}) => {
   var [category, setCategory] = useState("");
@@ -91,8 +92,10 @@ const Test = ({uploadProducts}) => {
       <Header>This is my header</Header> 
       {/* Resuing Component above and below  */}
       <Header fontSize={30} fontWeight='light' color='red'>This is my header</Header>
+      <Paragraph fontSize={28} fontWeight='light' color='blue'>Hey your Paragraph</Paragraph>
+      <Paragraph fontSize={22} fontWeight='bold' color='green'>Hey your Paragraph</Paragraph>
       <Paragraph fontSize={18} fontWeight='light' color='blue'>Hey your Paragraph</Paragraph>
-
+      <Button height={4} width={12} background='yellow' fontSize={32} color='white' fontWeight='light'>Click mee</Button>
     </div>
 
   );

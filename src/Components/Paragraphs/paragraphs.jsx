@@ -28,13 +28,15 @@ const Paragraph = ({
   color = 'black'
 }) => {
   var fontWeightValue = fontEstimater(fontWeight);
+  var fontSizeValue = fontSize/10 //to converti into em
+
   return (
     <div>
       <h1
         className="Paragraph"
         style={{
-          fontSize: `${fontSize}px`,
-          fontWeight: fontWeight,
+          fontSize: `${fontSizeValue}em`,
+          fontWeight: fontWeightValue,
           ...AdditionalStyle,
             color:color
         }}

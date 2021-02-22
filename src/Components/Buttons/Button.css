@@ -1,0 +1,11 @@
+.button{
+padding: 10px 0px;
+cursor: pointer;
+outline: none;
+border-radius: 10px;
+
+}
+.button:hover{
+    transform: translateY(5px);
+    background: salmon !important;
+}

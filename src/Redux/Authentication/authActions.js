@@ -6,6 +6,8 @@ import {
 } from "../../Firebase/firebase";
 import { SET_USER, REMOVE_USER } from "./constants";
 import firebase from "../../Firebase/firebase";
+import history from './../../History/history';
+
 
 var setUser = (userDataForState) => (dispatch) => {
   //nonn async func can also be called using thunk
@@ -52,6 +54,10 @@ export var signup = (credentials) => async (dispatch) => {
 
     dispatch(setUser(userDataForState)); //if calling an action inside an action, use dispatch to call it
     //so that values can be sett in redux state
+
+
+    //navigate to homepage agter being singed up
+    history.push('/')
   } catch (error) {
     console.log(error);
   }
@@ -71,6 +77,9 @@ export var signin = (credentials) => async (dispatch) => {
       uid,
     };
     dispatch(setUser(userDataForState));
+
+    history.push('/')
+
     // console.log(userData)
   } catch (error) {
     console.log(error);
@@ -79,6 +88,7 @@ export var signin = (credentials) => async (dispatch) => {
 
 export var signout = () => async (dispatch) => {
   //signout user from firebase
+  console.log('woring')
   await auth.signOut();
   dispatch(removerUser());
 };

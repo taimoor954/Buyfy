@@ -24,24 +24,25 @@ const Header = ({
   children,
   fontSize = 16,
   fontWeight = "bold",
-  AdditionalStyle = {},
-  color = 'black'
+  style = {},
+  
+  color = "black",
 }) => {
   var fontWeightValue = fontEstimater(fontWeight);
-  var fontSizeValue = fontSize/10
+  var fontSizeValue = fontSize / 10;
   return (
-    //1em = 10px set through below div style 
-    <div style={{fontSize:"62.5%"}}> 
+    //1em = 10px set through below div style
+    <div style={{ fontSize: "62.5%" }}>
       <h1
         className="header"
         style={{
           fontSize: `${fontSizeValue}em`,
           fontWeight: fontWeightValue,
-          ...AdditionalStyle,
-            color:color
+          ...style,
+          color: color,
         }}
-       >
-           {/* // Our so called reusable conponenet */}
+      >
+        {/* // Our so called reusable conponenet */}
         {children}
       </h1>
     </div>

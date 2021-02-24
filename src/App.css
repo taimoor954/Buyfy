@@ -2,6 +2,7 @@
 margin: 0px;
 padding: 0px;
 border: 5px;
+box-sizing: border-box;
 }
 a{
     text-decoration: none;
@@ -10,4 +11,8 @@ a{
 :root{
     --font-family-header :  'Roboto', sans-serif;
     --font-family-para :  'Open Sans', sans-serif;
+    --navbar-height : 70px
+}
+.pagesContainer{
+    padding-top: var(--navbar-height);
 }

@@ -24,6 +24,7 @@ function App({firebaseAuthListener}) {
       <Navbar/>
       <h1>Buyfy</h1>
       <Switch>
+      <div className="pagesContainer">
       <Route path="/" component={Home} exact={true}/>
       <Route path="/authentication" component={Authentication} exact={true}/>
       <Route path="/category" component={Category} exact={true}/>
@@ -31,6 +32,8 @@ function App({firebaseAuthListener}) {
       <Route path="/checkout/:orderId" component={Checkout} exact={true}/>
       <Route path="/product/:productId" component={Productdetail} exact={true}/>
       <Route path="/test" component={Test} exact={true}/>
+      </div>
+     
       </Switch>
       
     </div>

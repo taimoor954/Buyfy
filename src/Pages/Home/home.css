@@ -1,0 +1,19 @@
+.home{
+    display: grid;
+    grid-template-rows: minmax(calc(100vh - var(--navbar-height)), min-content);
+    grid-template-columns: repeat(2,1fr);
+    background-color: salmon;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column ;
+    width: 100%;
+}
+.homeLeft{
+    background-color: seagreen;
+}
+.homeRight{
+    background: skyblue;
+}

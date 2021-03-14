@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import "./productCard.css";
 import Header from "../Header/header";
 import "./../../App.css"
+import Button from "../Buttons/Button";
 
 const ProductCard = ({
   deleteProductFromCartAction,
@@ -20,8 +21,13 @@ const ProductCard = ({
 
   return (
     <div className="product_Card center">
+        <div className="product_card_hover center">
+            <Button>Add to cart</Button>
+        </div>
         <div className="product_cart_image"></div>
-        <Header style={{alignSelf : "flex-start"}}  fontSize={15} fontWeight="bold">Product Name</Header>
+
+        <Header style={{alignSelf : "flex-start", marginTop:"0.5em"}}  fontSize={18} fontWeight="bold">Product Name</Header>
+        <Header style={{alignSelf : "flex-start"}}  fontSize={20} fontWeight="regular">$40</Header>
      
      
      

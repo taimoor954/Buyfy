@@ -1,10 +1,11 @@
 .product_Card{
-    width: 18rem;
+    width: 16rem;
     background-color: rgb(255, 255, 255);
     padding: 2em;
     box-shadow: 0px 5px 10px 10px rgb(214, 208, 208);
     cursor: pointer;
     position: relative;
+    margin-bottom: 2em;
 
 }
 .product_cart_image{

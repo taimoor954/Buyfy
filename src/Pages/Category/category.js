@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { fetchProducts, clearProducts } from '../../Redux/Products/productsAction';
 import { categorizeProducts } from '../../Utility/productUtility/productUtility';
 import CategoryList from './../../Components/CategoryList/categoryList.jsx';
+import "./category.css"
+
 
 const Category = ({clearProducts}) => {
     useEffect(() => {
@@ -12,9 +14,11 @@ const Category = ({clearProducts}) => {
         }
     }, [])
     return (
-        <div>
+        <div className="p">
             <h1>Category page</h1>
+            
             <CategoryList/>
+
         </div>
     )
 }

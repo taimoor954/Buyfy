@@ -10,11 +10,13 @@ const Button = ({
   width = `15px`,
   color = "black",
   fontSize,
-  fontWeight
+  fontWeight,
+  ...restProps
 }) => {
   return (
     <button
       className="button"
+      {...restProps}
       style={{
         background: background,
         color: color,

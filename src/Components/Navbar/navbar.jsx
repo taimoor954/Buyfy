@@ -28,7 +28,7 @@ const Navbar = ({authentication, signout}) => {
     <div  className="navbar">
       <MenuItem to="/">Logo</MenuItem>
       <MenuItem to="/category">Shop</MenuItem>
-      <MenuItem>Cart</MenuItem>
+      <MenuItem to='/test'>Cart</MenuItem>
       {authentication ? <MenuItem onClick={signout} to="/authentication">Logout</MenuItem> : <MenuItem to="/authentication">Login</MenuItem> }
     </div>
   );

@@ -17,7 +17,6 @@ function App({firebaseAuthListener}) {
  useEffect(() =>
   {
     firebaseAuthListener()
-    console.log('CMD')
   },[])
   return (
     <div>

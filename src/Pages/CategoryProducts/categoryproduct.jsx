@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchCategoryProducts, clearProducts } from "./../../Redux/Products/productsAction";
+import { fetchCategoryProducts, clearProducts } from "../../Redux/Products/productsAction";
 import { useEffect } from "react";
-import ProductCard from './../../Components/ProductCard/productCard.jsx';
-
+import ProductCard from '../../Components/ProductCard/productCard.jsx';
+import "./categoryproducts.css"
 const Categoryproduct = ({match: {params: { categoryCheck },}, fetchCategoryProducts, products, clearProducts}) => {
   useEffect(() => {
     fetchCategoryProducts(categoryCheck);
@@ -11,11 +11,13 @@ const Categoryproduct = ({match: {params: { categoryCheck },}, fetchCategoryProd
       clearProducts() //CWU
     }
   }, []);
-  console.log(products);
   return (
-    <div>
-      <h1>{categoryCheck} Category product</h1>
-      {products.map((product)=> <ProductCard key={product.title} {...product}/>)}
+    <div className="categoryProducts">
+        <div className="categoryProductList">
+      <h1 className='category-text additonal-category-text'>{categoryCheck}</h1>
+
+      {products.map((product)=> <ProductCard key={product.title} {...product}/>)} 
+        </div>
     </div>
   );
 };

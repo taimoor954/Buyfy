@@ -34,7 +34,7 @@ const Test = ({uploadProducts}) => {
       <h1>Test</h1>
    
       <Cart/> 
-      <ProductCard/>
+      {/* <ProductCard/> */}
       {/* <Header>This is my header</Header>  */}
 
       {/* Resuing Component above and below  */}

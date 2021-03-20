@@ -1,10 +1,23 @@
 .categoryListItem{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    background-color: rgb(65, 255, 246);
+    /* background-color: rgb(65, 255, 246); */
     justify-items: center;
+    position: relative;
+    margin-bottom: 15em;
     /* justify-content: center; */
     
-    column-gap: 8rem;
-    row-gap: 20rem;
+    /* row-gap: 20rem; */
+}
+.category-text{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 140px;
+    letter-spacing: 13px;
+    color: rgb(226, 247, 37);
+    text-shadow: seashell;
+    cursor: pointer;
+
 }

@@ -7,7 +7,7 @@ const CategoryListItems = ({ categoryCheck, products }) => {
   return (
     <div className='categoryListItem'>
       {/* <h1>---------------------------------------------------</h1> */}
-      {/* <h1>{categoryCheck}</h1> */}
+      <h1 className='category-text'><Link to={`/category-products/${categoryCheck}`}>{categoryCheck}</Link></h1>
 
       {products.map((product) => (
         <ProductCard {...product} key={product.title} />

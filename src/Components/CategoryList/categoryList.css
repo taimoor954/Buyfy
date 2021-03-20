@@ -1,0 +1,7 @@
+.categoryList{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgb(34, 255, 130);
+    row-gap: 23px;
+    justify-content: center;
+}

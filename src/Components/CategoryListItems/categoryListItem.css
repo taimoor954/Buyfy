@@ -1,0 +1,10 @@
+.categoryListItem{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: rgb(65, 255, 246);
+    justify-items: center;
+    /* justify-content: center; */
+    
+    column-gap: 8rem;
+    row-gap: 20rem;
+}

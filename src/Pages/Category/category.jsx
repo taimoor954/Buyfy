@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
 import { fetchProducts, clearProducts } from '../../Redux/Products/productsAction';
 import { categorizeProducts } from '../../Utility/productUtility/productUtility';
-import CategoryList from './../../Components/CategoryList/categoryList.jsx';
+import CategoryList from '../../Components/CategoryList/categoryList.jsx';
 import "./category.css"
 
 
@@ -14,8 +14,7 @@ const Category = ({clearProducts}) => {
         }
     }, [])
     return (
-        <div className="p">
-            <h1>Category page</h1>
+        <div className="category">
             
             <CategoryList/>
 

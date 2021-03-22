@@ -1,13 +1,17 @@
 import React from 'react'
 import CartListItem from '../CartListItem/CartListItem'
 import { connect } from 'react-redux';
-
+import "./CartList.css"
 const CartList = ({cartItems}) => {
     console.log(cartItems)
     return (
-        <div>
-            <h1>Cart List</h1>
-            {cartItems.map((item)=> <CartListItem key={item.id} {...item} />)}
+        <div className='cart-list'>
+            {/* <h1>Cart List</h1> */}
+            {/* {cartItems.map((item)=> <CartListItem key={item.id} {...item} />)} */}
+            <CartListItem />
+            <CartListItem  />
+            <CartListItem  />
+            <CartListItem  />
         </div> 
     )
 }

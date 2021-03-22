@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { connect } from 'react-redux';
-import { uploadProducts } from './../../Redux/Products/productsAction';
-import Cart from './../../Components/Cart/Cart';
-import Header from './../../Components/Header/header';
-import Paragraph from './../../Components/Paragraphs/paragraphs';
-import Button from './../../Components/Buttons/Button';
+import { uploadProducts } from '../../Redux/Products/productsAction';
+import Cart from '../../Components/Cart/Cart';
+import Header from '../../Components/Header/header';
+import Paragraph from '../../Components/Paragraphs/paragraphs';
+import Button from '../../Components/Buttons/Button';
 import ProductCard from "../../Components/ProductCard/productCard";
 
 const Test = ({uploadProducts}) => {

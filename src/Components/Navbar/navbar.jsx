@@ -29,6 +29,7 @@ const Navbar = ({authentication, signout}) => {
       <MenuItem to="/">Logo</MenuItem>
       <MenuItem to="/category">Shop</MenuItem>
       <MenuItem to='/test'>Cart</MenuItem>
+      <MenuItem to='/test'>Test</MenuItem>
       {authentication ? <MenuItem onClick={signout} to="/authentication">Logout</MenuItem> : <MenuItem to="/authentication">Login</MenuItem> }
     </div>
   );

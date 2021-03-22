@@ -17,6 +17,9 @@ a{
     padding-top: var(--navbar-height);
 }
 
+button{
+    font-size: inherit;
+}
 
 .center {
     display: flex;

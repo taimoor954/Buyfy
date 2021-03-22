@@ -1,0 +1,11 @@
+.cart-list-item{
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 1em;
+
+}
+.cartItemImage{
+  width: 8em;
+  height: 8em;
+  background: seagreen;
+}

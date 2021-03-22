@@ -1,0 +1,19 @@
+.cart-list
+{
+  width: 100%;
+  height: 100%;
+  background: rgb(30, 155, 197);
+  display: grid;
+  row-gap: 1em;
+  overflow-y: scroll;
+  
+}
+.cart-list::-webkit-scrollbar{
+  width: 8px;
+}
+.cart-list::-webkit-scrollbar-track{
+    background: rgb(248, 248, 248);
+}
+.cart-list::-webkit-scrollbar-thumb{
+    background: rgb(240, 204, 0);
+}

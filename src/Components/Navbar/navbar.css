@@ -3,7 +3,7 @@ width: 100vw;
 height:  var(--navbar-height); /*i.e is 70px */
 background-color: brown;
 display: grid;
-grid-template-columns:1fr repeat(3,min-content);
+grid-template-columns:1fr repeat(4,min-content);
 padding: 0px 80px;
 box-sizing: border-box;
 align-content: center;

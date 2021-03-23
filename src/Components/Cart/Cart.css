@@ -2,11 +2,13 @@
   width: 30em;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content 30em min-content ;
-  background: salmon;
+  grid-template-rows: min-content 20em min-content ;
+  background: rgb(27, 186, 197);
   padding: 2em;
   justify-items: center;
   row-gap: 1em;
+  position: absolute;
+  transform: translateX(-20%);
 }
 
 

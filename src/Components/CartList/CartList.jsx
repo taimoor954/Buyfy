@@ -7,11 +7,8 @@ const CartList = ({cartItems}) => {
     return (
         <div className='cart-list'>
             {/* <h1>Cart List</h1> */}
-            {/* {cartItems.map((item)=> <CartListItem key={item.id} {...item} />)} */}
-            <CartListItem />
-            <CartListItem  />
-            <CartListItem  />
-            <CartListItem  />
+            {cartItems.map((item)=> <CartListItem key={item.id} {...item} />)}
+           
         </div> 
     )
 }

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import CheckoutList from "./../../Components/CheckoutList/checkoutlist";
+import CheckoutList from "../../Components/CheckoutList/checkoutlist";
 import { connect } from "react-redux";
-import { orderTotalCalculation } from "./../../Utility/checkout";
-import OrderForm from './../../Components/OrderForm/OrderForm';
-
+import { orderTotalCalculation } from "../../Utility/checkout";
+import OrderForm from '../../Components/OrderForm/OrderForm';
+import './checkout.css'
 
 const Checkout = ({total}) => {
     var [OrderFormDisplay, setOrderFormDisplay] = useState(false)

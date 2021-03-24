@@ -9,7 +9,14 @@
 
 /*this naming convertion is called bm*/
 .checkout {
-  /* padding: 15em 0em; */
+  padding: 2em 0em;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+  row-gap: 3em;
+}
+
+.checkoutBottomContent{
+  display: grid;
+  grid-template-columns: repeat(2,1fr );
+  justify-items: start;
 }

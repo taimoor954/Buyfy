@@ -9,14 +9,17 @@ const Checkout = ({total}) => {
     var [OrderFormDisplay, setOrderFormDisplay] = useState(false)
     console.log(total)
     return (
-    <div>
+    <div className='checkout-page-container'>
+      <div className='checkout'>
       <h1>Checkout page</h1>
       <CheckoutList />
       <h1>Total Amount - {total}</h1>
-     {OrderFormDisplay && <OrderForm/>} 
+     {/* {OrderFormDisplay && <OrderForm/>}  
+ <button onClick={(e) => setOrderFormDisplay(!OrderFormDisplay)}>Proceed & Pay {total}</button>  */}
+
      {/* if true then display Order else dont display */}
-      <button onClick={(e) => setOrderFormDisplay(!OrderFormDisplay)}>Proceed & Pay {total}</button> 
-      {/* iff true tou false hojayegi if false then true hojayegi from above code */}
+      {/* iff true tou false hojayegi if false then true hojayegi from above code */} 
+      </div>
     </div>
   );
 };

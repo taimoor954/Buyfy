@@ -5,8 +5,7 @@ import "./checkoutlist.css"
 const CheckoutList = ({cartItems}) => {
     console.log(cartItems)
     return (
-        <div>
-            <h1>Checkout List</h1>
+        <div className='checkoutList'>
             {cartItems.map((item)=> <Checkoutlistitems key={item.id} {...item} />)}
         </div> 
     )

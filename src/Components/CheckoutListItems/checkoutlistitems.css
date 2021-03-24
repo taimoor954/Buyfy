@@ -1,0 +1,15 @@
+.checkout-list-item{
+display: grid;
+grid-template-columns: max-content repeat(3,1fr);
+}
+.checkout-item-product-image{
+  width: 100px;
+  height: 100px;
+  background: lightcoral;
+  margin-right: 2em;
+  }
+  .checkout-item-product{
+    display: flex;
+    align-items: center;
+    
+  }

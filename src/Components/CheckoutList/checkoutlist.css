@@ -6,3 +6,8 @@
   row-gap: 1em;
 
 }   
+.checkout-list-item-extend{
+  justify-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}

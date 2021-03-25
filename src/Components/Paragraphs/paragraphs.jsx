@@ -25,7 +25,8 @@ const Paragraph = ({
   fontSize = 16,
   fontWeight = "bold",
   AdditionalStyle = {},
-  color = 'black'
+  color = 'black',
+  ...restProperties
 }) => {
   var fontWeightValue = fontEstimater(fontWeight);
   var fontSizeValue = fontSize/10 //to converti into em
@@ -34,12 +35,14 @@ const Paragraph = ({
     <div>
       <h1
         className="Paragraph"
+
         style={{
           fontSize: `${fontSizeValue}em`,
           fontWeight: fontWeightValue,
           ...AdditionalStyle,
             color:color
         }}
+      {...restProperties}
        >
            {/* // Our so called reusable conponenet */}
         {children}

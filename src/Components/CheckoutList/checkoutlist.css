@@ -4,6 +4,7 @@
   background: rgb(232, 241, 101);
   overflow-y: scroll;
   row-gap: 1em;
+  align-content: start;
 
 }   
 .checkout-list-item-extend{

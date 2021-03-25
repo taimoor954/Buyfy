@@ -11,6 +11,7 @@ const Button = ({
   color = "black",
   fontSize,
   fontWeight,
+  disabled=false,
   ...restProps
 }) => {
   return (
@@ -18,15 +19,16 @@ const Button = ({
       className="button"
       {...restProps}
       style={{
-        background: background,
+        background: disabled ? 'gray' : background,
         color: color,
         border: border,
         height: `${height}rem`,
         width: `${width}rem`,
         ...additionalStyle
       }}
+      disabled={disabled}
     >
-        <Paragraph fontSize={fontSize} fontWeight={fontWeight}  color={color}>{children}</Paragraph>
+        <Paragraph AdditionalStyle={{textDecoration : disabled ? 'line-through' : ""}} fontSize={fontSize} fontWeight={fontWeight}  color={color}>{children}</Paragraph>
     </button>
   );
 };

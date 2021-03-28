@@ -43,8 +43,9 @@ const Signupform = ({ signup }) => {
           label="Password"
         />
         <Button
+          type='submit'
           background="rgba(0,0,0,0.5)"
-          additionalStyle={{ width: '40%', height: '40px' }}
+          additionalStyle={{ width: '60%', height: '40px' }}
           color="white"
         >
           Sign Up

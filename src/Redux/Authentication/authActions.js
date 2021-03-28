@@ -111,6 +111,8 @@ export var googleSignin = () => async (dispatch) => {
       };
       await firestore.collection("Users").doc(uid).set(userInfo);
     }
+    history.push('/')
+
     //ELSE DIRECTLT SET TO REDUX STATE
     var userDataForState = {
       fullName: displayName,

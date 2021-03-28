@@ -1,23 +1,27 @@
 .authForm{
   width: 30em;
-  height: 35em;
-  background: seagreen;
+  height: 45em;
+  background: white;
   display: grid;
   grid-template-rows:  min-content 1fr min-content;
   padding: 2em;
+  transform: translateX(-10%);
 
 }
 .authFormSwitcher{
-  background: rgb(209, 255, 5);
+  /* background: rgb(209, 255, 5); */
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: start;
 }
 .authFormFields{
-  background: rgb(87, 180, 107);
+  /* background: rgb(0, 255, 55); */
+  align-content: center;
 }
 .authFormButtons{
-  background: rgb(182, 108, 108);
+  /* background: rgb(182, 108, 108); */
+  display: grid;
+  justify-items: center;
 }
 .underline{
   width: 40%;
@@ -29,5 +33,24 @@
   
 }
 .seperator{
-  
+/* background: green; */
+width: 100%;
+display: grid; 
+grid-template-columns: 1fr min-content 1fr;
+align-items: center;
+column-gap: 0.5em;
+font-family: var(--font-family-para);
+}
+
+.seperator::before{
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: rgb(0, 0, 0);
+}
+.seperator::after{
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: rgb(0, 0, 0);
 }

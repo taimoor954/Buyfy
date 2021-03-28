@@ -2,5 +2,7 @@
   display: grid;
   width: 100%;
   justify-items: center;
-  row-gap: 2em ;
+  row-gap: 1em ;
+  height: 100%;
+  align-items: center;
 }

@@ -20,7 +20,7 @@ const Signin = ({ signin }) => {
     <form className="signinForm" onSubmit={handleFormSumit}>
       <TextField
         id="standard-basic"
-        style={{ width: '100%', marginTop: '2em' }}
+        style={{ width: '100%', marginTop: '1em' }}
         label="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -29,10 +29,11 @@ const Signin = ({ signin }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         id="standard-basic"
-        style={{ width: '100%', marginTop: '2em' }}
+        style={{ width: '100%', marginTop: '1em' }}
         label="Password"
       />
       <Button
+        type="submit"
         background="rgba(0,0,0,0.5)"
         additionalStyle={{ width: '60%', height: '40px' }}
         color="white"

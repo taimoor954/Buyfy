@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../Buttons/Button.jsx'
 import Signin from '../SigninForm/signin.jsx'
+import Signupform from '../SignupForm/signupform.jsx'
 import './authForm.css'
 export const AuthForm = () => {
   return (
@@ -14,9 +15,12 @@ export const AuthForm = () => {
           </Button>
         </div>
         <div className="authFormFields">
-          <Signin/> 
+          {/* <Signin/> */}
+          <Signupform/>
         </div>
-        <div className="authFormButtons"></div>
+        <div className="authFormButtons">
+          <div className="seperator">OR</div>
+        </div>
     </div>  
   )
 }

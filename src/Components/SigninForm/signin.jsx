@@ -23,11 +23,11 @@ const Signin = ({ signin }) => {
         style={{ width: '100%', marginTop: '2em' }}
         label="Email"
         value={email}
-        onChange={(e)=>setEmail(e.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <TextField
         value={password}
-        onChange={(e)=>setPassword(e.target.value)}
+        onChange={(e) => setPassword(e.target.value)}
         id="standard-basic"
         style={{ width: '100%', marginTop: '2em' }}
         label="Password"
@@ -37,8 +37,8 @@ const Signin = ({ signin }) => {
         additionalStyle={{ width: '60%', height: '40px' }}
         color="white"
       >
-    Sign In
-    </Button>
+        Sign In
+      </Button>
 
       {/* <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type='text' placeholder='email'></input>
             <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type='text' placeholder='password'></input>

@@ -1,0 +1,29 @@
+.authForm{
+  width: 30em;
+  height: 35em;
+  background: seagreen;
+  display: grid;
+  grid-template-rows:  min-content 1fr min-content;
+
+}
+.authFormSwitcher{
+  background: rgb(209, 255, 5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+}
+.authFormFields{
+  background: rgb(87, 180, 107);
+}
+.authFormButtons{
+  background: rgb(182, 108, 108);
+}
+.underline{
+  width: 40%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  
+}

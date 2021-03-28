@@ -1,0 +1,15 @@
+.auth{
+  width: 100vw;
+  height: calc(100vh - var(--navbar-height));
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  background: lightcoral;
+  font-size: 62.5%;
+}
+.authLeft{
+  background: rgb(162, 85, 224);
+  
+}
+.authRight{
+  background: rgb(50, 204, 243);
+}

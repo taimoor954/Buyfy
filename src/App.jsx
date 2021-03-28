@@ -2,7 +2,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import React,{useEffect} from 'react'
 import './App.css';
 import Home from './Pages/Home/home';
-import Authentication from './Pages/Authetication/auth.js';
+import Authentication from './Pages/Authetication/auth.jsx';
 import Category from './Pages/Category/category';
 import Categoryproduct from './Pages/CategoryProducts/categoryproduct';
 import Checkout from './Pages/Checkout/checkout';
@@ -21,7 +21,6 @@ function App({firebaseAuthListener}) {
   return (
     <div>
       <Navbar/>
-      <h1>Buyfy</h1>
       <Switch>
       <div className="pagesContainer">
       <Route path="/" component={Home} exact={true}/>

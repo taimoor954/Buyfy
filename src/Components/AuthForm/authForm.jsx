@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../Buttons/Button.jsx'
+import Signin from '../SigninForm/signin.jsx'
 import './authForm.css'
 export const AuthForm = () => {
   return (
@@ -12,7 +13,9 @@ export const AuthForm = () => {
             <div className='underline'></div>
           </Button>
         </div>
-        <div className="authFormFields"></div>
+        <div className="authFormFields">
+          <Signin/> 
+        </div>
         <div className="authFormButtons"></div>
     </div>  
   )

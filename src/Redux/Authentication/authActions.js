@@ -6,7 +6,7 @@ import {
 } from "../../Firebase/firebase";
 import { SET_USER, REMOVE_USER } from "./constants";
 import firebase from "../../Firebase/firebase";
-import history from './../../History/history';
+import history from '../../History/history';
 
 
 var setUser = (userDataForState) => (dispatch) => {

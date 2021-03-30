@@ -11,7 +11,7 @@ const CartListItem = ({deleteProductFromCartAction,removalProductFromCartAction,
             <div className="cartItemDes">
                 <Paragraph fontSize={18} fontWeight='semi-bold'>{title}</Paragraph>
                 <div style={{display:"flex", alignItems:"center"}}>
-                <Paragraph style={{marginRight: "6px"}}>${cost} X {quantity} = </Paragraph>
+                <Paragraph>${cost} X {quantity} = </Paragraph>
                 <Paragraph fontSize={18} fontWeight='semi-bold' style={{marginLeft: "6px"}}> {cost * quantity}</Paragraph>
                 </div>
             </div>

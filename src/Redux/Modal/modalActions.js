@@ -1,6 +1,6 @@
 import { CLOSE_MODAL, OPEN_MODAL } from './modalConstants';
 
-export var openModal = ({ modalType, modalProps }) => ({
+export var openModal = ({ modalType, modalProps={} }) => ({
   type: OPEN_MODAL,
   payload: {
     modalProps,

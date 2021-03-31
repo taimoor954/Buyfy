@@ -6,8 +6,9 @@ import Header from '../../Components/Header/header';
 import Paragraph from '../../Components/Paragraphs/paragraphs';
 import Button from '../../Components/Buttons/Button';
 import ProductCard from "../../Components/ProductCard/productCard";
+import {openModal} from '../../Redux/Modal/modalActions'
 
-const Test = ({uploadProducts}) => {
+const Test = ({uploadProducts, openModal}) => {
   var [category, setCategory] = useState("");
   var [title, setTitle] = useState("");
   var [cost, setCost] = useState("");
@@ -32,8 +33,11 @@ const Test = ({uploadProducts}) => {
   return (
     <div>
       <h1>Test</h1>
-   
-      <Cart/> 
+      <Button onClick={()=>openModal({modalType:'testing'})}>OPEN MODAL</Button>
+
+
+
+      {/* <Cart/>  */}
       {/* <ProductCard/> */}
       {/* <Header>This is my header</Header>  */}
 
@@ -50,8 +54,9 @@ const Test = ({uploadProducts}) => {
 };
 
 var actions = {
-    uploadProducts
-}
+    uploadProducts,
+  openModal
+  }
 
 export default connect(null, actions)(Test);
   

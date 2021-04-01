@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import TestModal from '../TestModal/testModal.jsx'
 //contain all modals 
 var modalLookUp ={
-
-  
+testModal: TestModal
 }
 
 
@@ -13,7 +13,7 @@ var modalLookUp ={
   var renderedModal = null
   if(modal)
   {
-    var {modalType='testModal', modalProps} = modal
+    var {modalType, modalProps} = modal
     var ModalComponent = modalLookUp[modalType]
     renderedModal = <ModalComponent {...modalProps}/>
   }
@@ -29,4 +29,4 @@ return{
 }
 }
 
-export default connect(mapState,null)(ModalManager)
+export default connect(mapState)(ModalManager)

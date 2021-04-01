@@ -7,14 +7,14 @@ import {Provider} from 'react-redux'
 // import reportWebVitals from './reportWebVitals';
 import store from './Redux/store';
 import history from './History/history';
-import ModalManager from './Components/ModalManager/ModalManager';
+import ModalManager from './Components/ModalManager/ModalManager.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
     <Provider store ={store}>
     <ModalManager/>
-    <App />
+    <App/>
     </Provider>
     </Router>
   </React.StrictMode>,

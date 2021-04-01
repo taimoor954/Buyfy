@@ -7,6 +7,7 @@ import Paragraph from '../../Components/Paragraphs/paragraphs';
 import Button from '../../Components/Buttons/Button';
 import ProductCard from "../../Components/ProductCard/productCard";
 import {openModal} from '../../Redux/Modal/modalActions'
+import "./test.css"
 
 const Test = ({uploadProducts, openModal}) => {
   var [category, setCategory] = useState("");
@@ -31,9 +32,9 @@ const Test = ({uploadProducts, openModal}) => {
     
   };
   return (
-    <div>
+    <div className='test-css'>
       <h1>Test</h1>
-      <Button onClick={()=>openModal({modalType:'testing'})}>OPEN MODAL</Button>
+      <Button onClick={()=>openModal({modalType:'testModal'})}>OPEN MODAL</Button>
 
 
 

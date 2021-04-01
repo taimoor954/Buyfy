@@ -7,7 +7,7 @@ export var openModal = ({ modalType, modalProps={} }) => ({
     modalType,
   },
 });
-export var closeModal = ({ modalType }) => ({
+export var closeModal = () => ({
   type: CLOSE_MODAL,
   
 });

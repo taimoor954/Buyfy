@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import AddressFormModal from '../AddressFormModal/AddressFormModal.jsx'
 import TestModal from '../TestModal/testModal.jsx'
 //contain all modals 
 var modalLookUp ={
-testModal: TestModal
+testModal: TestModal,
+addressFormModal: AddressFormModal
 }
 
 

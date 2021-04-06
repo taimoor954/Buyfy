@@ -35,6 +35,7 @@ const Test = ({uploadProducts, openModal}) => {
     <div className='test-css'>
       <h1>Test</h1>
       <Button onClick={()=>openModal({modalType:'testModal'})}>OPEN MODAL</Button>
+      <Button onClick={()=>openModal({modalType:'addressFormModal'})}>OPEN address MODAL</Button>
 
 
 

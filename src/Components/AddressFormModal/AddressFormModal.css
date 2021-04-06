@@ -1,0 +1,11 @@
+.addressFormModal{
+  width: 35em;
+  height: 40em;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding:  3em;
+}
+
+.addressFormFields{
+  margin-bottom: 2em;
+}

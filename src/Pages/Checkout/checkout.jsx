@@ -6,8 +6,9 @@ import Header from '../../Components/Header/header.jsx'
 import OrderForm from '../../Components/OrderForm/OrderForm';
 import './checkout.css'
 import Button from "../../Components/Buttons/Button";
+import { openModal } from "../../Redux/Modal/modalActions";
 
-const Checkout = ({total}) => {
+const Checkout = ({total,openModal}) => {
     var [OrderFormDisplay, setOrderFormDisplay] = useState(false)
     console.log(total)
     return (
@@ -17,7 +18,7 @@ const Checkout = ({total}) => {
       <CheckoutList />
       <div className='checkoutBottomContent'>
       <Header style={{letterSpacing:'4px'}} fontSize={60} fontWeight='bold'>Total Price: {total}</Header>
-      <Button additionalStyle={{justifySelf:'end', borderRadius:'20px'}} fontSize={28} fontWeight='bold' background='white' color='black'>Proceed And Pay</Button> 
+      <Button onClick={()=>openModal({modalType:'addressFormModal'})} additionalStyle={{justifySelf:'end', borderRadius:'20px'}} fontSize={28} fontWeight='bold' background='white' color='black'>Proceed And Pay</Button> 
 
       </div>
       {/* <h1>Total Amount - {total}</h1> */}
@@ -34,4 +35,7 @@ const Checkout = ({total}) => {
 var mapState = (store) => {
   return { total: orderTotalCalculation(store.cart) };
 };
-export default connect(mapState, null)(Checkout);
+var actions = {
+  openModal
+}
+export default connect(mapState, actions)(Checkout);

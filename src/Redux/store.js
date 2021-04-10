@@ -7,4 +7,3 @@ var middleware= [thunk]
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(...middleware)))
 export const persistor = persistStore(store) //config for redux-presist
 export default store
-//BUG:

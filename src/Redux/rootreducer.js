@@ -20,4 +20,4 @@ var rootReducer = combineReducers({
     modal:modalReducer
 })
 
-export default persistReducer(presistConfig,rootReducer)
+export default persistReducer(presistConfig,rootReducer) 

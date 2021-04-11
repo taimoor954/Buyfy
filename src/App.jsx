@@ -1,6 +1,8 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import React,{useEffect, lazy, Suspense} from 'react'
 import './App.css';
+
+//STATIC IMPORTS
 // import Home from './Pages/Home/home';
 // import Authentication from './Pages/Authetication/auth.jsx';
 // import Category from './Pages/Category/category';
